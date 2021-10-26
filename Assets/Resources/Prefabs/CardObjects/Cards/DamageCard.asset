@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee70d003c76c994684fa3ebc282168f, type: 3}
+  m_Name: DamageCard
+  m_EditorClassIdentifier: 
+  cardName: Fireball
+  cardType: 0
+  cardAbilities:
+  - {fileID: 11400000, guid: deacea24a55226d4ea890fd1874b862c, type: 2}
