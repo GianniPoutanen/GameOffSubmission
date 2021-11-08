@@ -18,8 +18,6 @@ public class GameManager : MonoBehaviour
 
     #region Constructor
     private static GameManager _i;
-    public HandManager hm;
-
     public static GameManager Instance
     {
         get
@@ -36,12 +34,6 @@ public class GameManager : MonoBehaviour
     #endregion Constructor
 
     #region Time Methosd
-
-    public HandManager GetHandManager()
-    {
-        GameObject hm = GameObject.Find("Hand");
-        return hm.GetComponent<HandManager>();
-    }
 
     // TODO smooth transition
     public void SetGameSpeed(float speed)

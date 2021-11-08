@@ -5,17 +5,15 @@ using UnityEngine;
 public class ShakeTest : MonoBehaviour
 {
 
-    public CameraShake.ShakeProperties testProperties;
-
-    IEnumerator currentShake;
-
-    public void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-           FindObjectOfType<CameraShake>().StartShake(testProperties);
-        }
-    }
+	[Header("Press Space For Test")]
+	public CameraShake.Properties testProperties;
 
 
+	void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			FindObjectOfType<CameraShake>().StartShake(testProperties);
+		}
+	}
 }

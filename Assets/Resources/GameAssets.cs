@@ -144,7 +144,6 @@ public class GameAssets : MonoBehaviour
     [System.Serializable]
     public class SoundAudioClip
     {
-        public SoundManager.eSound sound;
         public string resourceLocations;
         private AudioClip[] _clips;
 

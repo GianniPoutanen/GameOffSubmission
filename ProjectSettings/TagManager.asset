@@ -11,9 +11,9 @@ TagManager:
   - 
   - Water
   - UI
+  - Ground
   - 
   - 
-  - Field
   - 
   - 
   - 
@@ -38,18 +38,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 2514143331
-    locked: 0
-  - name: Floors
-    uniqueID: 2332289117
-    locked: 0
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Walls
-    uniqueID: 3711151259
-    locked: 0
-  - name: DamagePopup
-    uniqueID: 3433120997
     locked: 0
