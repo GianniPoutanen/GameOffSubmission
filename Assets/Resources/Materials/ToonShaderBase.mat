@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ToonShaderBase
-  m_Shader: {fileID: -6465566751694194690, guid: b4fb1e8d1a707f7408cb881e46255eaa, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 9899b1b353710854f92aa0eff08be8c8, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -36,8 +36,16 @@ Material:
         m_Texture: {fileID: 10307, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - Texture2D_1fb578568c9042238870536e3f27d0ed:
+        m_Texture: {fileID: 2800000, guid: a003a493810dcfe4a90181fa219f318e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - Texture2D_213556d00c4d47b284ad3da273f7b795:
         m_Texture: {fileID: 10307, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_9cecd8e70cc5452eb15d3332fa8d096d:
+        m_Texture: {fileID: 2800000, guid: 6ad296ac0787c684bb45b69c600bf7a7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_a4e7a1434fa147efbc8a473f47339658:
@@ -104,6 +112,7 @@ Material:
     - Vector1_22cabf55d4b34c46a9ea7689f41f7b77: 2
     - Vector1_428a7d3d649b4656bd46f4ced3fd254f: 0
     - Vector1_4ab3484de0a64b618330f6b048a0c227: 1
+    - Vector1_bb16ed97adf0428d8898f0f62e65b996: 0
     - Vector1_be22ea50adc645bdbebd914266cf82ca: 0
     - _AlphaClip: 0
     - _Blend: 0
@@ -133,6 +142,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_15714a6c556246258a82e78ae9aa857e: {r: 1, g: 1, b: 1, a: 0}
+    - Vector2_416b29eefb7d4654bf20c20a03f63a04: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

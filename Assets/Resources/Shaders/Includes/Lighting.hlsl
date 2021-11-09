@@ -45,7 +45,7 @@ float GetLightIntensity(float3 color) {
 // This function gets additional light data and calculates realtime shadows
 Light GetAdditionalLightForToon(int pixelLightIndex, float3 worldPosition) {
     // Convert the pixel light index to the light data index
-    int perObjectLightIndex = GetFPerObjectLightIndex(pixelLightIndex);
+    int perObjectLightIndex = GetPerObjectLightIndex(pixelLightIndex);
     // Call the URP additional light algorithm. This will not calculate shadows, since we don't pass a shadow mask value
     Light light = GetAdditionalPerObjectLight(perObjectLightIndex, worldPosition);
     // Manually set the shadow attenuation by calculating realtime shadows
@@ -71,19 +71,18 @@ void AddAdditionalLights_float(float Smoothness, float3 WorldPosition, float3 Wo
         // In order to receive shadows in 2020.2, we must do a little extra than before. This function takes care of it
         Light light = GetAdditionalLightForToon(i, WorldPosition);
         half NdotL = saturate(dot(WorldNormal, light.direction));
-        half atten = light.distanceAttenuation * light.shadowAttenuation;// *GetLightIntensity(light.color);
+        half atten = light.distanceAttenuation * light.shadowAttenuation * GetLightIntensity(light.color);
         half thisDiffuse = atten * NdotL;
         half thisSpecular = LightingSpecular(thisDiffuse, light.direction, WorldNormal, WorldView, 1, Smoothness);
         Diffuse += thisDiffuse;
         Specular += thisSpecular;
-        Color += light.color * (thisDiffuse + thisSpecular);
 
+        if (thisDiffuse > highestDiffuse) {
+            highestDiffuse = thisDiffuse;
+            Color = light.color;
+        }
     }
 #endif
-    half total = Diffuse + Specular;
-    // if 
-    Color = total <= 0 ? MainColor : Color / total;
-
 }
 
 #endif

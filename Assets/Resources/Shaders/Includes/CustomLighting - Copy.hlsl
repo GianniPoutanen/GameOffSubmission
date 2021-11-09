@@ -20,10 +20,9 @@ struct CustomLightingData {
     float4 shadowCoord;
 
     // Surface attributes
+    float3 albedo;
     float smoothness;
     float ambientOcclusion;
-    float diffuse;
-    float colour;
 
     // Baked lighting
     float3 bakedGI;
@@ -33,12 +32,12 @@ struct CustomLightingData {
 
 // Translate a [0, 1] smoothness value to an exponent 
 float GetSmoothnessPower(float rawSmoothness) {
-    return 1; // exp2(10 * rawSmoothness + 1);
+    return exp2(10 * rawSmoothness + 1);
 }
 
 #ifndef SHADERGRAPH_PREVIEW
 float3 CustomGlobalIllumination(CustomLightingData d) {
-    float3 indirectDiffuse = d.bakedGI * d.ambientOcclusion;
+    float3 indirectDiffuse = d.albedo * d.bakedGI * d.ambientOcclusion;
 
     float3 reflectVector = reflect(-d.viewDirectionWS, d.normalWS);
     // This is a rim light term, making reflections stronger along
@@ -50,56 +49,30 @@ float3 CustomGlobalIllumination(CustomLightingData d) {
         RoughnessToPerceptualRoughness(1 - d.smoothness),
         d.ambientOcclusion) * fresnel;
 
-    return  indirectDiffuse + indirectSpecular;
+    return indirectDiffuse + indirectSpecular;
 }
 
 float3 CustomLightHandling(CustomLightingData d, Light light) {
 
-    float3 radiance = light.color;// *(light.distanceAttenuation * light.shadowAttenuation);
+    float3 radiance = light.color * (light.distanceAttenuation * light.shadowAttenuation);
 
-    d.diffuse = saturate(dot(d.normalWS, light.direction));
+    float diffuse = saturate(dot(d.normalWS, light.direction));
     float specularDot = saturate(dot(d.normalWS, normalize(light.direction + d.viewDirectionWS)));
-    float specular = pow(specularDot, GetSmoothnessPower(d.smoothness)) * d.diffuse;
+    float specular = pow(specularDot, GetSmoothnessPower(d.smoothness)) * diffuse;
 
-    float3 color = radiance;// *(diffuse + specular);
+    float3 color = d.albedo * radiance * (diffuse + specular);
 
     return color;
 }
 #endif
 
-void AddAdditionalLights(float Smoothness, float3 WorldPosition, float3 WorldNormal, float3 WorldView,
-    float MainDiffuse, float MainSpecular, float3 MainColor,
-    out float Diffuse, out float Specular, out float3 Color) {
-    Diffuse = MainDiffuse;
-    Specular = MainSpecular;
-    Color = MainColor * (MainDiffuse + MainSpecular);
-
-#ifndef SHADERGRAPH_PREVIEW
-    int pixelLightCount = GetAdditionalLightsCount();
-    for (int i = 0; i < pixelLightCount; ++i) {
-        Light light = GetAdditionalLight(i, WorldPosition);
-        half NdotL = saturate(dot(WorldNormal, light.direction));
-        half atten = light.distanceAttenuation * light.shadowAttenuation;
-        half thisDiffuse = atten * NdotL;
-        half thisSpecular = LightingSpecular(thisDiffuse, light.direction, WorldNormal, WorldView, 1, Smoothness);
-        Diffuse += thisDiffuse;
-        Specular += thisSpecular;
-        Color += light.color * (thisDiffuse + thisSpecular);
-    }
-#endif
-
-    half total = Diffuse + Specular;
-    // If no light touches this pixel, set the color to the main light's color
-    Color = total <= 0 ? MainColor : Color / total;
-}
-
-
 float3 CalculateCustomLighting(CustomLightingData d) {
 #ifdef SHADERGRAPH_PREVIEW
     // In preview, estimate diffuse + specular
     float3 lightDir = float3(0.5, 0.5, 0);
-    float intensity = 1;//saturate(dot(d.normalWS, lightDir)) + pow(saturate(dot(d.normalWS, normalize(d.viewDirectionWS + lightDir))), GetSmoothnessPower(d.smoothness));
-    return intensity;
+    float intensity = saturate(dot(d.normalWS, lightDir)) +
+        pow(saturate(dot(d.normalWS, normalize(d.viewDirectionWS + lightDir))), GetSmoothnessPower(d.smoothness));
+    return d.albedo * intensity;
 #else
     // Get the main light. Located in URP/ShaderLibrary/Lighting.hlsl
     Light mainLight = GetMainLight(d.shadowCoord, d.positionWS, d.shadowMask);
@@ -114,7 +87,6 @@ float3 CalculateCustomLighting(CustomLightingData d) {
     // Shade additional cone and point lights. Functions in URP/ShaderLibrary/Lighting.hlsl
     uint numAdditionalLights = GetAdditionalLightsCount();
     for (uint lightI = 0; lightI < numAdditionalLights; lightI++) {
-        //AddAdditionalLights(d.smoothness, d.positionWS, d.normalWS, d.viewDirectionWS,)
         Light light = GetAdditionalLight(lightI, d.positionWS, d.shadowMask);
         color += CustomLightHandling(d, light);
     }
@@ -126,9 +98,8 @@ float3 CalculateCustomLighting(CustomLightingData d) {
 #endif
 }
 
-
 void CalculateCustomLighting_float(float3 Position, float3 Normal, float3 ViewDirection,
-    float Smoothness, float AmbientOcclusion,
+    float3 Albedo, float Smoothness, float AmbientOcclusion,
     float2 LightmapUV,
     out float3 Color) {
 
@@ -136,16 +107,16 @@ void CalculateCustomLighting_float(float3 Position, float3 Normal, float3 ViewDi
     d.positionWS = Position;
     d.normalWS = Normal;
     d.viewDirectionWS = ViewDirection;
+    d.albedo = Albedo;
     d.smoothness = Smoothness;
     d.ambientOcclusion = AmbientOcclusion;
-    //Diffuse = 1;
+
 #ifdef SHADERGRAPH_PREVIEW
     // In preview, there's no shadows or bakedGI
     d.shadowCoord = 0;
     d.bakedGI = 0;
     d.shadowMask = 0;
     d.fogFactor = 0;
-    Color = CalculateCustomLighting(d);
 #else
     // Calculate the main light shadow coord
     // There are two types depending on if cascades are enabled
@@ -176,12 +147,9 @@ void CalculateCustomLighting_float(float3 Position, float3 Normal, float3 ViewDi
     // This returns 0 if fog is turned off
     // It is not the same as the fog node in the shader graph
     d.fogFactor = ComputeFogFactor(positionCS.z);
-
-    Light mainLight = GetMainLight(d.shadowCoord, d.positionWS, d.shadowMask);
+#endif
 
     Color = CalculateCustomLighting(d);
-    //Diffuse = d.diffuse;
-#endif
 }
 
 #endif
