@@ -6,8 +6,8 @@ public class PlayerMovementBehaviour : MonoBehaviour
 {
     public CharacterController controller;
 
-
-    public float speed = 6f;
+    public float walkSpeed = 6f;
+    public float runSpeed = 6f;
     public float jumpHeight;
     public float gravity = -9.81f;
     [Range(1f, 10f)]
@@ -23,15 +23,17 @@ public class PlayerMovementBehaviour : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded = false;
-
+    bool isRunning = false;
+    bool isInAir = false;
 
     private void Update()
     {
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
         {
-            velocity.y = -1f;
+            velocity.y = -0.5f;
         }
 
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -43,17 +45,28 @@ public class PlayerMovementBehaviour : MonoBehaviour
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            controller.Move(moveDir.normalized * speed * Time.deltaTime);
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                isRunning = true;
+                controller.Move(moveDir.normalized * runSpeed * Time.deltaTime);
+            }
+            else
+            {
+                isRunning = false;
+                controller.Move(moveDir.normalized * walkSpeed * Time.deltaTime);
+            }
         }
 
         if (Input.GetButtonDown("Jump"))
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity * gravityFactor);
+            isInAir = true;
         }
 
 
         velocity.y += gravity * gravityFactor * Time.deltaTime;
-
+        Debug.Log(isGrounded);
+        //Debug.Log(velocity.y);
         controller.Move(velocity * Time.deltaTime);
 
     }
