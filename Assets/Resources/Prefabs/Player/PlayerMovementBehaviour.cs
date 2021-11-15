@@ -62,8 +62,9 @@ public class PlayerMovementBehaviour : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Jump") && !GameAssets.Instance.dialogueManager.InDialog)
+        if ((Input.GetButtonDown("Jump") && !GameAssets.Instance.dialogueManager.InDialog)|| gameObject.GetComponent<Climb>().isClimbing)
         {
+            gameObject.GetComponent<Climb>().isClimbing = false;
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity * gravityFactor);
             isInAir = true;
         }
