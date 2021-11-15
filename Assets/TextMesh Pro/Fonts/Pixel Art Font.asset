@@ -55,9 +55,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: Pixel Art Font
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 520195868
   material: {fileID: -3969300834791536375}
-  materialHashCode: 0
+  materialHashCode: -1347094468
   m_Version: 1.1.0
   m_SourceFontFileGUID: baf6a5d362ba9c346931a3bd18d14127
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: baf6a5d362ba9c346931a3bd18d14127, type: 3}
@@ -2483,8 +2483,8 @@ MonoBehaviour:
     italicTypeface: {fileID: 0}
   fontWeights: []
   normalStyle: 0
-  normalSpacingOffset: 0
-  boldStyle: 0.75
+  normalSpacingOffset: 16
+  boldStyle: 1
   boldSpacing: 7
   italicStyle: 35
   tabSize: 10

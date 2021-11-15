@@ -1,0 +1,34 @@
+title: Cube.Start
+tags: 
+position: 900,299
+---
+<<SetSpeaker Cube>>
+Hi!!!
+<<SetSpeaker Lamp>>
+Oh hey what's up?
+<<SetSpeaker Cube>>
+Well... It's been a day :<
+<<SetSpeaker Lamp>>
+[[ What's wrong? |Cube.Ask]]
+[[ That sucks, hope things get better |Cube.Bye]]
+===
+
+
+title: Cube.Ask
+tags: 
+position: 730.5721015930176,657.0553741455078
+---
+<<SetSpeaker Cube>>
+It's nothing really
+Sphere is just a hater
+<<SetSpeaker Lamp>>
+Oh fair
+I think so also
+===
+title: Cube.Bye
+tags: 
+position: 996.1546479479268,659.0342017067359
+---
+<<SetSpeaker Cube>>
+Have a great day!
+===

@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: bb8a2682dc85e4f45aa821df7ed3dfe8
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-AU
+  stringIDs:
+  - Cube-Sphere.Start-0
+  - Cube-Sphere.Start-1
+  - Cube-Sphere.Start-2
+  - Cube-Sphere.Start-3
+  - Cube-Sphere.Start-4
+  - Cube-Sphere.IsOk-5
+  - Cube-Sphere.IsOk-6
+  - Cube-Sphere.IsOk-7
+  - Cube-Sphere.Bye-8
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: bb8a2682dc85e4f45aa821df7ed3dfe8, type: 3}
+  localizations: []

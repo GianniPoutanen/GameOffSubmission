@@ -22,13 +22,18 @@ public class PlayerMovementBehaviour : MonoBehaviour
 
 
     Vector3 velocity;
-    bool isGrounded = false;
+    public bool isGrounded = false;
     bool isRunning = false;
     bool isInAir = false;
 
+    private void Start()
+    {
+        GameAssets.Instance.playerCharacter = this.gameObject;
+    }
+
+
     private void Update()
     {
-
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
@@ -39,7 +44,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertiacal = Input.GetAxisRaw("Vertical");
         Vector3 direction = new Vector3(horizontal, 0, vertiacal).normalized;
-        if (direction.magnitude > 0.1f)
+        if (direction.magnitude > 0.1f && !GameAssets.Instance.dialogueManager.InDialog)
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + Camera.main.transform.eulerAngles.y;
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
@@ -57,16 +62,13 @@ public class PlayerMovementBehaviour : MonoBehaviour
             }
         }
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && !GameAssets.Instance.dialogueManager.InDialog)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity * gravityFactor);
             isInAir = true;
         }
 
-
         velocity.y += gravity * gravityFactor * Time.deltaTime;
-        Debug.Log(isGrounded);
-        //Debug.Log(velocity.y);
         controller.Move(velocity * Time.deltaTime);
 
     }

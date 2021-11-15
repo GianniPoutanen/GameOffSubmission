@@ -25,13 +25,13 @@ public class GameAssets : MonoBehaviour
     }
     #endregion Constructor
 
-    [Header("Pop Up Objects")]
-    public GameObject pfDamagePopup;
-
     [SerializeField]
     [Header("Sounds")]
     public SoundAudioClip[] soundAudioClips;
 
+    public GameObject playerCharacter;
+
+    public DialogueManager dialogueManager;
 
     #region Pooling 
     //Pooling System Variable
@@ -185,4 +185,10 @@ public class GameAssets : MonoBehaviour
         }
     }
 
+    public int GetPoolItemCount(string poolName){
+        if (_pools.ContainsKey(poolName)){
+            return _pools[poolName].transform.childCount;
+        }
+        return 0;
+    }
 }
