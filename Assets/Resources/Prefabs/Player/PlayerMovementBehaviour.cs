@@ -19,8 +19,9 @@ public class PlayerMovementBehaviour : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    public int maxJumps = 1;
 
-
+    int currentJumps = 0;
     Vector3 velocity;
     public bool isGrounded = false;
     bool isRunning = false;
@@ -36,9 +37,13 @@ public class PlayerMovementBehaviour : MonoBehaviour
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        if (isGrounded && velocity.y < 0)
+        if (isGrounded)
         {
-            velocity.y = -0.5f;
+            currentJumps = 0;
+            if (velocity.y < 0)
+            {
+                velocity.y = -0.5f;
+            }
         }
 
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -64,13 +69,15 @@ public class PlayerMovementBehaviour : MonoBehaviour
 
         if ((Input.GetButtonDown("Jump") || gameObject.GetComponent<Climb>().isClimbing) && !GameAssets.Instance.dialogueManager.InDialog)
         {
-            gameObject.GetComponent<Climb>().isClimbing = false;
-            velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity * gravityFactor);
-            isInAir = true;
+            if (++currentJumps <= maxJumps)
+            {
+                gameObject.GetComponent<Climb>().isClimbing = false;
+                velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity * gravityFactor);
+                isInAir = true;
+            }
         }
 
         velocity.y += gravity * gravityFactor * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
-
     }
 }

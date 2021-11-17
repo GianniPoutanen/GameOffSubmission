@@ -415,6 +415,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+  maxJumps: 1
   isGrounded: 0
 --- !u!114 &4993227942477688021
 MonoBehaviour:
@@ -434,6 +435,9 @@ MonoBehaviour:
   climbSpeed: 3
   rotationSpeed: 5
   reach: 3
+  climbableMask:
+    serializedVersion: 2
+    m_Bits: 576
 --- !u!1 &5342003934601907280
 GameObject:
   m_ObjectHideFlags: 0

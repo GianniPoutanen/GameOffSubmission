@@ -3879,6 +3879,34 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4993227942477688021, guid: 035dd1992597b6240afd8a4316944f1d, type: 3}
+      propertyPath: climbable.m_Bits
+      value: 576
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993227942477688021, guid: 035dd1992597b6240afd8a4316944f1d, type: 3}
+      propertyPath: climbableMask.m_Bits
+      value: 576
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993227942477688021, guid: 035dd1992597b6240afd8a4316944f1d, type: 3}
+      propertyPath: climbableLayers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993227942477688021, guid: 035dd1992597b6240afd8a4316944f1d, type: 3}
+      propertyPath: climbableLayers.Array.data[0]
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993227942477688021, guid: 035dd1992597b6240afd8a4316944f1d, type: 3}
+      propertyPath: climbableLayers.Array.data[1]
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993227942477688021, guid: 035dd1992597b6240afd8a4316944f1d, type: 3}
+      propertyPath: climbableLayers.Array.data[0].m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 4993227942477688021, guid: 035dd1992597b6240afd8a4316944f1d, type: 3}
+      propertyPath: climbableLayers.Array.data[1].m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 5342003934601907280, guid: 035dd1992597b6240afd8a4316944f1d, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -7629,7 +7657,6 @@ MonoBehaviour:
   onCommand:
     m_PersistentCalls:
       m_Calls: []
-  WrittenLine: 
 --- !u!114 &1923807850
 MonoBehaviour:
   m_ObjectHideFlags: 0
