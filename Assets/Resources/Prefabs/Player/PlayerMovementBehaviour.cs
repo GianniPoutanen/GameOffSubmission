@@ -20,6 +20,8 @@ public class PlayerMovementBehaviour : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     public int maxJumps = 1;
+    public float jumpTimeBuffer;
+    float timeSpentJumping;
 
     int currentJumps = 0;
     Vector3 velocity;
@@ -35,10 +37,14 @@ public class PlayerMovementBehaviour : MonoBehaviour
 
     private void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
+        if (isInAir)
+        {
+            timeSpentJumping += Time.deltaTime;
+        }
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask) && (!isInAir || timeSpentJumping > jumpTimeBuffer);
         if (isGrounded)
         {
+            timeSpentJumping = 0;
             currentJumps = 0;
             if (velocity.y < 0)
             {

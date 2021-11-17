@@ -416,6 +416,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   maxJumps: 1
+  jumpTimeBuffer: 0.1
   isGrounded: 0
 --- !u!114 &4993227942477688021
 MonoBehaviour:
