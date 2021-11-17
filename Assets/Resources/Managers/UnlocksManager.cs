@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class UnlocksManager : MonoBehaviour
 {
-
     public enum eSkillType
     {
-
+        
     }
 
     [SerializeField]
