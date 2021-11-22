@@ -126,6 +126,8 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+  maxJumps: 1
+  jumpTimeBuffer: 0
   animator: {fileID: 178257549613868575}
   isGrounded: 0
 --- !u!114 &9129446690946414520
@@ -143,9 +145,12 @@ MonoBehaviour:
   controller: {fileID: 9129446690946414518}
   anim: {fileID: 0}
   isClimbing: 0
-  climbSpeed: 3
+  climbSpeed: 7
   rotationSpeed: 5
   reach: 3
+  climbableMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &4583542149588189568
 PrefabInstance:
   m_ObjectHideFlags: 0

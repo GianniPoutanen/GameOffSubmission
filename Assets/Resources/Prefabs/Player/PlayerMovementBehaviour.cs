@@ -81,12 +81,11 @@ public class PlayerMovementBehaviour : MonoBehaviour
 
         if ((Input.GetButtonDown("Jump") || gameObject.GetComponent<Climb>().isClimbing) && !GameAssets.Instance.dialogueManager.InDialog)
         {
-            if (!isGrounded){
-                animator.Play("DoubleJump");
-            }
-
             if (++currentJumps <= maxJumps)
             {
+                if (isInAir)
+                    animator.Play("DoubleJump");
+
                 gameObject.GetComponent<Climb>().isClimbing = false;
                 velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity * gravityFactor);
                 isInAir = true;

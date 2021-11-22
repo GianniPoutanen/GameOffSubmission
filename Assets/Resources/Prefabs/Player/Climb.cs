@@ -33,6 +33,11 @@ public class Climb : MonoBehaviour
     {
         return (climbableMask == (climbableMask | (1 << gameObject.layer)));
     }
+    bool isClimbableObject(Collider collider)
+    {
+        return (climbableMask == (climbableMask | (1 << collider.gameObject.layer)));
+    }
+
 
     bool CheckForClimb()
     {
@@ -47,7 +52,7 @@ public class Climb : MonoBehaviour
         {
             helper.transform.rotation = Quaternion.LookRotation(-hit.normal);
             // check if in front of a climbable layer and the gradient is sufficient for climbing
-            return isClimbableObject(hit.transform.gameObject) && helper.transform.localEulerAngles.x < controller.slopeLimit;
+            return isClimbableObject(hit.collider) && helper.transform.localEulerAngles.x < controller.slopeLimit;
         }
         return false;
     }
