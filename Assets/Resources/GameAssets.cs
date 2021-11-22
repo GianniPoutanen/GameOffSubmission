@@ -153,7 +153,6 @@ public class GameAssets : MonoBehaviour
             {
                 _clips = Resources.LoadAll<AudioClip>(resourceLocations);
             }
-
             return _clips[n];
         }
 

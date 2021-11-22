@@ -20,6 +20,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
+    public Animator animator;
 
     Vector3 velocity;
     public bool isGrounded = false;
@@ -35,6 +36,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
     private void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        animator.SetBool("IsGrounded", isGrounded);
 
         if (isGrounded && velocity.y < 0)
         {
@@ -54,6 +56,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
             {
                 isRunning = true;
                 controller.Move(moveDir.normalized * runSpeed * Time.deltaTime);
+
             }
             else
             {
@@ -64,6 +67,10 @@ public class PlayerMovementBehaviour : MonoBehaviour
 
         if ((Input.GetButtonDown("Jump") || gameObject.GetComponent<Climb>().isClimbing) && !GameAssets.Instance.dialogueManager.InDialog)
         {
+            if (!isGrounded){
+                animator.Play("DoubleJump");
+            }
+
             gameObject.GetComponent<Climb>().isClimbing = false;
             velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity * gravityFactor);
             isInAir = true;
@@ -71,6 +78,14 @@ public class PlayerMovementBehaviour : MonoBehaviour
 
         velocity.y += gravity * gravityFactor * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+        animator.SetFloat("velocityY", velocity.y);
 
+        //Sort Animation
+        if (isGrounded && direction.magnitude > 0.1f)
+        {
+            animator.SetFloat("Speed", isRunning ? 2f : 1f);
+        }
+        else
+            animator.SetFloat("Speed", 0f);
     }
 }
