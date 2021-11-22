@@ -19,9 +19,13 @@ public class PlayerMovementBehaviour : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    public int maxJumps = 1;
+    public float jumpTimeBuffer;
+    float timeSpentJumping;
 
     public Animator animator;
 
+    int currentJumps = 0;
     Vector3 velocity;
     public bool isGrounded = false;
     bool isRunning = false;
@@ -38,9 +42,19 @@ public class PlayerMovementBehaviour : MonoBehaviour
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         animator.SetBool("IsGrounded", isGrounded);
 
-        if (isGrounded && velocity.y < 0)
+        if (isInAir)
         {
-            velocity.y = -0.5f;
+            timeSpentJumping += Time.deltaTime;
+        }
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask) && (!isInAir || timeSpentJumping > jumpTimeBuffer);
+        if (isGrounded)
+        {
+            timeSpentJumping = 0;
+            currentJumps = 0;
+            if (velocity.y < 0)
+            {
+                velocity.y = -0.5f;
+            }
         }
 
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -71,13 +85,17 @@ public class PlayerMovementBehaviour : MonoBehaviour
                 animator.Play("DoubleJump");
             }
 
-            gameObject.GetComponent<Climb>().isClimbing = false;
-            velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity * gravityFactor);
-            isInAir = true;
+            if (++currentJumps <= maxJumps)
+            {
+                gameObject.GetComponent<Climb>().isClimbing = false;
+                velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity * gravityFactor);
+                isInAir = true;
+            }
         }
 
         velocity.y += gravity * gravityFactor * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+
         animator.SetFloat("velocityY", velocity.y);
 
         //Sort Animation
