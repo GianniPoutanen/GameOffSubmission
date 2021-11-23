@@ -48,16 +48,18 @@ LODGroup:
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.77535045
+  - screenRelativeHeight: 0.50142384
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 1237744630575664354}
-  - screenRelativeHeight: 0.3
+  - screenRelativeHeight: 0.23993231
     fadeTransitionWidth: 0
-    renderers: []
+    renderers:
+    - renderer: {fileID: 1237744630575664354}
   - screenRelativeHeight: 0.1
     fadeTransitionWidth: 0
-    renderers: []
+    renderers:
+    - renderer: {fileID: 1237744630575664354}
   m_Enabled: 1
 --- !u!114 &3501517514894222898
 MonoBehaviour:
@@ -71,6 +73,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bc602d0a6094664b9c3713e440e96c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  width: 0
+  height: 0
+  centerPos: {x: 0, y: 0, z: 0}
 --- !u!33 &3143371831801453174
 MeshFilter:
   m_ObjectHideFlags: 0

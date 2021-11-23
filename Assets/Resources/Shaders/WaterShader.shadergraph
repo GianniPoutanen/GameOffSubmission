@@ -31,6 +31,9 @@
             "m_Id": "3f8687e5baf54e62a2eeff4d654c5de4"
         },
         {
+            "m_Id": "711d35d41aae46869a21609ea15abd31"
+        },
+        {
             "m_Id": "af096bc4dd384b5e813371be4f32dd3c"
         },
         {
@@ -299,6 +302,9 @@
         },
         {
             "m_Id": "99c828c08494482a92c07f664dc991b6"
+        },
+        {
+            "m_Id": "b1a5ad08ade84a32a2a7f0a783bc5e32"
         }
     ],
     "m_GroupDatas": [
@@ -1202,6 +1208,20 @@
                     "m_Id": "0f65dcc1cdbf4733a79db4f25293e7f9"
                 },
                 "m_SlotId": 2
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "b1a5ad08ade84a32a2a7f0a783bc5e32"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "0f65dcc1cdbf4733a79db4f25293e7f9"
+                },
+                "m_SlotId": 1
             }
         },
         {
@@ -6093,6 +6113,29 @@
 }
 
 {
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "711d35d41aae46869a21609ea15abd31",
+    "m_Guid": {
+        "m_GuidSerialized": "067f2439-d8f4-4922-8862-db517089cd95"
+    },
+    "m_Name": "Wave Density",
+    "m_DefaultReferenceName": "Vector1_711d35d41aae46869a21609ea15abd31",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 1.0,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    }
+}
+
+{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "7143d6c4998b4ea8b0c9237ddb3da834",
@@ -7185,6 +7228,21 @@
 {
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "94b55856d4ca4481a8ab98a9613866eb",
+    "m_Id": 0,
+    "m_DisplayName": "Wave Density",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "958c2c1956fc4d35a60216ba5bb2f49a",
     "m_Id": 0,
     "m_DisplayName": "Wave Dampener",
@@ -8182,6 +8240,41 @@
         "m_SerializableColors": []
     },
     "m_BlendMode": 11
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "b1a5ad08ade84a32a2a7f0a783bc5e32",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -2090.062255859375,
+            "y": -2014.85498046875,
+            "width": 0.0,
+            "height": 0.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "94b55856d4ca4481a8ab98a9613866eb"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "711d35d41aae46869a21609ea15abd31"
+    }
 }
 
 {
