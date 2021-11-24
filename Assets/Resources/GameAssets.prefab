@@ -43,12 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7cf177123871cd408a43edb0f631c79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pfDamagePopup: {fileID: 3821608186898211795, guid: 8e23dd892566b514ca2431cf8da8f84b,
-    type: 3}
-  soundAudioClips:
-  - sound: 0
-    resourceLocations: Sounds/Steps/LightArmour/Grass
-  - sound: 1
-    resourceLocations: Sounds/Swords/Heavy/Swipes
-  - sound: 2
-    resourceLocations: Sounds/Swords/Heavy/Contacts
+  soundAudioClips: []
+  playerCharacter: {fileID: 0}
+  dialogueManager: {fileID: 0}

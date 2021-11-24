@@ -129,6 +129,34 @@ public class GameAssets : MonoBehaviour
 
         return retres;
     }
+public GameObject GetActiveObject(string name)
+    {
+        GameObject retres = null;
+
+        if (_pools.ContainsKey(name + 's'))
+        {
+            foreach (Transform children in _pools[name + 's'].transform)
+            {
+                if (children.gameObject.activeSelf)
+                {
+                    retres = children.gameObject;
+                }
+            }
+        }
+        else
+        {
+            _pools.Add(name + 's', new GameObject(name));
+        }
+
+        if (retres == null)
+        {
+            retres = new GameObject(name);
+            retres.transform.SetParent(_pools[name + 's'].transform);
+        }
+
+        return retres;
+    }
+
 
     public void AddToPool(string poolName, GameObject obj)
     {

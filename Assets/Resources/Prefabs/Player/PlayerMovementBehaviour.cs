@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovementBehaviour : MonoBehaviour
 {
+
     public CharacterController controller;
 
     public float walkSpeed = 6f;
@@ -31,6 +32,8 @@ public class PlayerMovementBehaviour : MonoBehaviour
     bool isRunning = false;
     bool isInAir = false;
 
+    [Header("Step Sounds")]
+    public AudioClip[] stepSounds;
     private void Start()
     {
         GameAssets.Instance.playerCharacter = this.gameObject;
@@ -40,6 +43,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
     private void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
         animator.SetBool("IsGrounded", isGrounded);
 
         if (isInAir)
@@ -104,5 +108,17 @@ public class PlayerMovementBehaviour : MonoBehaviour
         }
         else
             animator.SetFloat("Speed", 0f);
+    }
+
+
+    private int stepSoundCounter = 0;
+    public void PlayStepSound() {
+        if (stepSounds.Length > 0){
+            int randStepIndex = Random.Range(0, stepSounds.Length);
+            //MakeSureRandom
+            stepSoundCounter = randStepIndex == stepSoundCounter ? (randStepIndex + 1) % stepSounds.Length : randStepIndex;
+            SoundManager.PlaySound(stepSounds[stepSoundCounter]);
+            Debug.Log(stepSoundCounter);
+        }
     }
 }

@@ -6,9 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [Header("Sound Volumes")]
     [Range(0f, 1f)]
-    public float pieceSoundEffectsVolume;
-    [Range(0f, 1f)]
-    public float pieceStepsEffectsVolume;
+    public float soundEffectVolume;
     [Range(0f, 1f)]
     public float musicVolume;
 

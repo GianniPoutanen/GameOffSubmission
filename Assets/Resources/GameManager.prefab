@@ -43,7 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8c34130244ecc4899579fd921caca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pieceSoundEffectsVolume: 0.275
-  pieceStepsEffectsVolume: 1
+  soundEffectVolume: 1
   musicVolume: 0.303
   gameSpeed: 1
