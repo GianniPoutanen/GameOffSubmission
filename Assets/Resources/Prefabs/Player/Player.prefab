@@ -1078,7 +1078,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   maxJumps: 1
-  jumpTimeBuffer: 0
+  jumpTimeBuffer: 0.5
   animator: {fileID: 8642040229840780299}
   isGrounded: 0
   stepSounds:
@@ -1106,7 +1106,7 @@ MonoBehaviour:
   reach: 3
   climbableMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 576
 --- !u!143 &7919688205960176971
 CharacterController:
   m_ObjectHideFlags: 0

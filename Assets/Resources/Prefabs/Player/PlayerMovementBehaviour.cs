@@ -55,6 +55,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
         {
             timeSpentJumping = 0;
             currentJumps = 0;
+            isInAir = false;
             if (velocity.y < 0)
             {
                 velocity.y = -0.5f;
