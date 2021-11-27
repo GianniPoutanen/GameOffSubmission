@@ -1,0 +1,20 @@
+title: Sphere.Start
+tags: 
+colorID: 0
+position: 1079,575
+---
+<<SetSpeaker Sphere>>
+Hi
+<<SetSpeaker Lamp>>
+Hey
+<<SetSpeaker Sphere>>
+...
+<<SetSpeaker Lamp>>
+...
+<<SetSpeaker Sphere>>
+...
+<<SetSpeaker Lamp>>
+Okay Bye
+<<SetSpeaker Sphere>>
+Cya
+===

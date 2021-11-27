@@ -1,0 +1,45 @@
+title: Cube.Start
+tags: 
+colorID: 0
+position: 1029,525
+---
+<<SetSpeaker Cube>>
+Hi!!!
+<<SetSpeaker Lamp>>
+Oh hey what's up?
+<<SetSpeaker Cube>>
+Well... It's been a day :<
+<<SetSpeaker Lamp>>
+[[ What's wrong? |Cube.Ask]]
+[[ That sucks, hope things get better |Cube.Bye]]
+[[ Whatever square! |Cube.Rude]]
+[[ *Leave* |Cube.Bye]]
+===
+title: Cube.Ask
+tags: 
+colorID: 0
+position: 805,870
+---
+<<SetSpeaker Cube>>
+It's nothing really
+Sphere is just a hater
+<<SetSpeaker Lamp>>
+Oh fair
+I think so also
+===
+title: Cube.Rude
+tags: 
+colorID: 0
+position: 1025,870
+---
+<<SetSpeaker Cube>>
+Oh uh, ok, bye
+===
+title: Cube.Bye
+tags: 
+colorID: 0
+position: 1245,870
+---
+<<SetSpeaker Cube>>
+Have a great day!
+===
