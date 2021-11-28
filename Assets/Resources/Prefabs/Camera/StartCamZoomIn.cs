@@ -20,6 +20,8 @@ public class StartCamZoomIn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        characterCam.m_YAxis.m_InputAxisName = "";
+        characterCam.m_XAxis.m_InputAxisName = "";
         if (!opening)
         {
             openShadeInImage.gameObject.SetActive(false);
