@@ -3,7 +3,6 @@ using UnityEngine;
 public class Safety : MonoBehaviour
 {
     public bool isOutOfBounds;
-    public Transform outOfBounds;
     public LayerMask outOfBoundsMask;
     public float secondsBetweenCheckpoints = 0.5f;
     public CharacterController controller;
@@ -42,8 +41,7 @@ public class Safety : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider collider) {
-        print("OnTriggerEnter");
-        if (outOfBoundsMask == (outOfBoundsMask | (1 << collider.gameObject.layer)));
+        if (outOfBoundsMask == (outOfBoundsMask | (1 << collider.gameObject.layer)))
         {
             isOutOfBounds = true;
         }

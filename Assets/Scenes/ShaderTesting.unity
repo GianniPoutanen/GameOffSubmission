@@ -5496,6 +5496,10 @@ PrefabInstance:
       value: BigWater
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 271fd8b0c77332348aa4b2da8ca8c86b, type: 3}
+      propertyPath: m_Layer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 271fd8b0c77332348aa4b2da8ca8c86b, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -8886,6 +8890,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8bc7df1215558b84a8f151c68cf6858f, type: 3}
+--- !u!1 &1461055942 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 271fd8b0c77332348aa4b2da8ca8c86b, type: 3}
+  m_PrefabInstance: {fileID: 816904316}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1461055945
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461055942}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 9127120572191758296, guid: 271fd8b0c77332348aa4b2da8ca8c86b, type: 3}
 --- !u!1 &1462409081 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1550108728441234, guid: 08b4dda652360224a89d540c7f13c3d7, type: 3}
@@ -18522,11 +18545,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6335303326932088731, guid: 39d76b68e92bd8f459494938ff2ec11c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.015901936
+      value: -0.015901938
       objectReference: {fileID: 0}
     - target: {fileID: 6335303326932088731, guid: 39d76b68e92bd8f459494938ff2ec11c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.7768523
+      value: 0.77685225
       objectReference: {fileID: 0}
     - target: {fileID: 6335303326932088731, guid: 39d76b68e92bd8f459494938ff2ec11c, type: 3}
       propertyPath: m_LocalRotation.z
@@ -18598,7 +18621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6335303327337439622, guid: 39d76b68e92bd8f459494938ff2ec11c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0045793187
+      value: -0.0045793154
       objectReference: {fileID: 0}
     - target: {fileID: 6335303327337439622, guid: 39d76b68e92bd8f459494938ff2ec11c, type: 3}
       propertyPath: m_LocalRotation.y
@@ -18606,7 +18629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6335303327337439622, guid: 39d76b68e92bd8f459494938ff2ec11c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.068900526
+      value: -0.06890052
       objectReference: {fileID: 0}
     - target: {fileID: 7187484293655246969, guid: 39d76b68e92bd8f459494938ff2ec11c, type: 3}
       propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.size
