@@ -110,25 +110,6 @@ public class PlayerMovementBehaviour : MonoBehaviour
         }
         else{
             animator.SetFloat("Speed", 0f);
-
-        }
-
-
-        animator.SetBool("IsClimbing", gameObject.GetComponent<Climb>().isClimbing);
-        if (gameObject.GetComponent<Climb>().isClimbing)
-        {
-            if (Input.GetKey(KeyCode.W)) 
-            {
-                animator.SetFloat("ClimbYVelocity", 1f);
-            }
-            else if (Input.GetKey(KeyCode.S)) 
-            {
-                animator.SetFloat("ClimbYVelocity", -1f);
-            }
-            else 
-            {
-                animator.SetFloat("ClimbYVelocity", 0f);
-            }
         }
     }
 

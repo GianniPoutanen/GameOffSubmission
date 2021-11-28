@@ -9,6 +9,7 @@ public class Climb : MonoBehaviour
     public float rotationSpeed = 5;
     public float reach = 3;
     public LayerMask climbableMask;
+    public Animator animator;
 
     float delta;
     bool isJumping;
@@ -81,8 +82,28 @@ public class Climb : MonoBehaviour
         Tick();
     }
 
+    void HandleClimbAnimation()
+    {
+        if (Input.GetKey(KeyCode.W)) 
+        {
+            animator.SetFloat("ClimbYVelocity", 1f);
+        }
+        else if (Input.GetKey(KeyCode.S)) 
+        {
+            animator.SetFloat("ClimbYVelocity", -1f);
+        }
+        else 
+        {
+            animator.SetFloat("ClimbYVelocity", 0f);
+        }
+    }
+
     public void Tick()
     {
+        if (animator.GetBool("IsClimbing") != isClimbing)
+        {
+            animator.SetBool("IsClimbing", isClimbing);
+        }
         if (isJumping)
         {
             return;
@@ -96,6 +117,7 @@ public class Climb : MonoBehaviour
         }
         else
         {
+            HandleClimbAnimation();
             if (Input.GetButtonDown("Jump"))
             {
                 // when jumping, bypass regular climbing behaviour for 1 second
