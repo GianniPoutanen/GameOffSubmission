@@ -92,7 +92,7 @@ public class DialogueManager : MonoBehaviour
     private void Awake()
     {
         GameAssets.Instance.dialogueManager = this;
-        dialogueRunner.AddCommandHandler("SetSpeaker", SetSpeakerInfo);
+        SetupEvents();
 
         // Event handlers for when the dialogue bubble updates
         dialogueRunner.Dialogue.lineHandler += new Yarn.Dialogue.LineHandler(HandleLineBubbleScaling);
@@ -107,6 +107,7 @@ public class DialogueManager : MonoBehaviour
             {
                 if (closestSpeaker != null && GameAssets.Instance.playerCharacter.GetComponent<PlayerMovementBehaviour>().isGrounded)
                 {
+                    dialogueRunner.yarnScripts = new YarnProgram[] { closestSpeaker.yarnScript };
                     dialogueRunner.StartDialogue(closestSpeaker.StartNode);
                 }
             }
@@ -115,7 +116,7 @@ public class DialogueManager : MonoBehaviour
         {
             SetDialogueBubblePosition();
             //SetBubbleSize();
-            if (Input.GetKeyDown(KeyCode.Space)|| Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.E))
             {
                 if (LineFinished)
                 {
@@ -293,6 +294,26 @@ public class DialogueManager : MonoBehaviour
     {
         DUI.textSpeed = textSpeed;
     }
+
+
+    #region OneOffs - probs bad practice but quick
+
+    public void SetupEvents()
+    {
+
+        dialogueRunner.AddCommandHandler("SetSpeaker", SetSpeakerInfo);
+        dialogueRunner.AddCommandHandler("MothFlyAway", MothFriendFlyAway);
+    }
+
+    public void MothFriendFlyAway(string[] info)
+    {
+        if (currentSpeaker.name == "MothFriend")
+        {
+            currentSpeaker.GetComponent<MothFriendStart>().FlyAway();
+        }
+    }
+
+    #endregion OneOffs - probs bad practice but quick
 
 
     #endregion Functions Called By YarnSpinner Classes

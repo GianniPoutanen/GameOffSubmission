@@ -1,5 +1,28 @@
-﻿title: MothFriend
-tags:
+title: MothFriend.GameStart
+tags: 
+colorID: 0
+position: 668,281
 ---
-
+<<SetSpeaker MothFriend>>
+Hey
+You made it
+<<SetSpeaker Lamp>>
+Yeah
+sorry for keeping you waiting
+<<SetSpeaker MothFriend>>
+That's okay
+You know
+It's still pretty far
+You sure you don't need help getting to the top?
+<<SetSpeaker Lamp>>
+No thanks
+I'll make it there
+<<SetSpeaker MothFriend>>
+Alright
+Well...
+I'll see you at the top
+<<SetSpeaker Lamp>>
+Cya there
+<<SetSpeaker MothFriend>>
+<<MothFlyAway>>
 ===
