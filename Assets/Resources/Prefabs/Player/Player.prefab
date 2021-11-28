@@ -1009,6 +1009,7 @@ GameObject:
   - component: {fileID: 7919688205960176971}
   - component: {fileID: 5493180748897816702}
   - component: {fileID: -1873459754373040137}
+  - component: {fileID: 5885365515054873375}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1108,6 +1109,7 @@ MonoBehaviour:
   climbableMask:
     serializedVersion: 2
     m_Bits: 576
+  animator: {fileID: 0}
 --- !u!143 &7919688205960176971
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1152,12 +1154,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 562aa3b6a2d49094cbed7b6c827ac2c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isWet: 0
-  water: {fileID: 0}
-  waterMask:
+  isOutOfBounds: 0
+  outOfBoundsMask:
     serializedVersion: 2
-    m_Bits: 16
+    m_Bits: 0
   secondsBetweenCheckpoints: 0.5
+  controller: {fileID: 0}
+--- !u!114 &5885365515054873375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5101055675308336837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd69b358491b314e9e41ef2dba2eb00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: []
 --- !u!1 &5344715146206453152
 GameObject:
   m_ObjectHideFlags: 0

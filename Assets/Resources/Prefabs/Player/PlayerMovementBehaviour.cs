@@ -42,6 +42,10 @@ public class PlayerMovementBehaviour : MonoBehaviour
 
     private void Update()
     {
+        if (maxJumps == 1 && UnlocksManager.Instance.CheckUnlocked(0))
+        {
+            maxJumps = 2;
+        }
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         animator.SetBool("IsGrounded", isGrounded);
