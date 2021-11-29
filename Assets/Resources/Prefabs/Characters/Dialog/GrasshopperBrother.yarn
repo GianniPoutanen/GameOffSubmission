@@ -1,0 +1,21 @@
+title: GrasshopperBrother.GameStart
+tags: 
+colorID: 0
+position: 668,281
+---
+<<SetSpeaker GrasshopperBrotherSpeaker>>
+So close!
+That one was it I'm sure!
+<<SetSpeaker Lamp>>
+What are you doing?
+<<SetSpeaker GrasshopperBrotherSpeaker>>
+What does it look like?
+I'm trying to jump as high as that tree
+<<SetSpeaker Lamp>>
+I'm trying to get to the top of it
+Can't jump as high as you though
+<<SetSpeaker GrasshopperBrotherSpeaker>>
+Hmm...
+If you could jump more than once, I'm sure that'd help
+Say, find me 4 special flowers and I'll teach you
+===

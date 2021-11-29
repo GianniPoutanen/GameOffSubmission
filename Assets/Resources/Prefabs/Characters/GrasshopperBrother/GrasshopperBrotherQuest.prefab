@@ -1,0 +1,321 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3587930408985050384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3587930408985050399}
+  m_Layer: 0
+  m_Name: GrasshopperBrotherQuest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3587930408985050399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3587930408985050384}
+  m_LocalRotation: {x: -0, y: -0.89142513, z: -0, w: 0.45316806}
+  m_LocalPosition: {x: 1.7, y: 25.24, z: 246.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3909224324887483047}
+  - {fileID: 3587930410362014748}
+  - {fileID: 3587930410287902978}
+  - {fileID: 3587930410532336636}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -126.106, z: 0}
+--- !u!1 &3587930410287902979
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3587930410287902978}
+  - component: {fileID: 3587930410287902977}
+  m_Layer: 0
+  m_Name: GrasshopperPathFollower
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3587930410287902978
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3587930410287902979}
+  m_LocalRotation: {x: -0.22459513, y: -0.7639554, z: 0.3455746, w: -0.49649516}
+  m_LocalPosition: {x: -1.5599365, y: 5.6108, z: -0.5293884}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3587930408985050399}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3587930410287902977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3587930410287902979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33aabe1a2dec93349b06e6e5dc51bc06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathCreator: {fileID: 3587930410362014749}
+  endOfPathInstruction: 0
+  speed: 30
+--- !u!1 &3587930410362014750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3587930410362014748}
+  - component: {fileID: 3587930410362014749}
+  m_Layer: 0
+  m_Name: GrasshopperPathCreator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3587930410362014748
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3587930410362014750}
+  m_LocalRotation: {x: 0.09193721, y: 0.80093944, z: -0.12746502, w: 0.577751}
+  m_LocalPosition: {x: -1.5999806, y: 4.9643784, z: -0.5293951}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3587930408985050399}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3587930410362014749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3587930410362014750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e5ac92bc18f545cc84cd886ece82b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  editorData:
+    _bezierPath:
+      points:
+      - {x: -0.34370726, y: -5.341083, z: 2.6494193}
+      - {x: -0.3195066, y: -5.2248116, z: 2.6512804}
+      - {x: 1.3259151, y: 26.430866, z: -10.018763}
+      - {x: 2.2643585, y: 29.61023, z: -8.78238}
+      - {x: 2.941458, y: 31.904179, z: -7.8903146}
+      - {x: 1.9641114, y: 25.518286, z: -7.517179}
+      - {x: 0.8879275, y: 16.404062, z: -4.7053914}
+      - {x: -0.5726717, y: 4.034218, z: -0.88922715}
+      - {x: -1.0876279, y: -3.924911, z: 2.2938056}
+      - {x: -0.22712788, y: -5.24078, z: 2.6747656}
+      isClosed: 0
+      space: 0
+      controlMode: 0
+      autoControlLength: 0.3
+      boundsUpToDate: 0
+      bounds:
+        m_Center: {x: 0, y: 0, z: 0}
+        m_Extent: {x: 0, y: 0, z: 0}
+      perAnchorNormalsAngle:
+      - 0
+      - 0
+      - 0
+      - 0
+      globalNormalsAngle: 0
+      flipNormals: 0
+    vertexPathUpToDate: 1
+    vertexPathMaxAngleError: 0
+    vertexPathMinVertexSpacing: 0.01
+    showTransformTool: 1
+    showPathBounds: 0
+    showPerSegmentBounds: 0
+    displayAnchorPoints: 1
+    displayControlPoints: 1
+    bezierHandleScale: 26.46
+    globalDisplaySettingsFoldout: 1
+    keepConstantHandleSize: 0
+    showNormalsInVertexMode: 0
+    showBezierPathInVertexMode: 0
+    showDisplayOptions: 1
+    showPathOptions: 1
+    showVertexPathDisplayOptions: 0
+    showVertexPathOptions: 1
+    showNormals: 1
+    showNormalsHelpInfo: 0
+    tabIndex: 0
+  initialized: 1
+--- !u!1 &3587930410532336637
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3587930410532336636}
+  - component: {fileID: 3587930410532336635}
+  m_Layer: 0
+  m_Name: GrasshopperBrotherSpeaker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3587930410532336636
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3587930410532336637}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.82, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3587930408985050399}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3587930410532336635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3587930410532336637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 303ce992241c13447ba5c9dcc5f636f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactDistance: 6
+  priority: 0
+  yarnScript: {fileID: 2480198943629176163, guid: 79caf4a6f4f9c084588e3deb4a1e6ba1, type: 3}
+  StartNode: GrasshopperBrother.GameStart
+  popupOffset: {x: 0, y: 0}
+  bubbleColour: {r: 0.45911294, g: 1, b: 0.3066038, a: 1}
+  textColour: {r: 0.09785697, g: 0.23584908, b: 0.052287295, a: 1}
+  voiceClips: []
+--- !u!114 &3587930410555907579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4398761620382959645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca0eaa3df98ff384da2470a33fefb377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  str: 0.02
+  lookRotation: {x: 0, y: 0, z: 0, w: 0}
+  followObject: {fileID: 3587930410287902978}
+  follow: 1
+  speedDampiner: 2
+--- !u!1001 &3587930409993860428
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3587930408985050399}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 7de4ad979e8fef344923325194c9a689, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7de4ad979e8fef344923325194c9a689, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7de4ad979e8fef344923325194c9a689, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7de4ad979e8fef344923325194c9a689, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7de4ad979e8fef344923325194c9a689, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8992519
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7de4ad979e8fef344923325194c9a689, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7de4ad979e8fef344923325194c9a689, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.43743128
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7de4ad979e8fef344923325194c9a689, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7de4ad979e8fef344923325194c9a689, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7de4ad979e8fef344923325194c9a689, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -51.88
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7de4ad979e8fef344923325194c9a689, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5721714460430908877, guid: 7de4ad979e8fef344923325194c9a689, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dd5defefb2241fb4487905a00870c8a0, type: 2}
+    - target: {fileID: 919132149155446097, guid: 7de4ad979e8fef344923325194c9a689, type: 3}
+      propertyPath: m_Name
+      value: GrasshopperBrother
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202271454713460447, guid: 7de4ad979e8fef344923325194c9a689, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dd5defefb2241fb4487905a00870c8a0, type: 2}
+    - target: {fileID: 8517092093092423734, guid: 7de4ad979e8fef344923325194c9a689, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: dd5defefb2241fb4487905a00870c8a0, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7de4ad979e8fef344923325194c9a689, type: 3}
+--- !u!1 &4398761620382959645 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7de4ad979e8fef344923325194c9a689, type: 3}
+  m_PrefabInstance: {fileID: 3587930409993860428}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3909224324887483047 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7de4ad979e8fef344923325194c9a689, type: 3}
+  m_PrefabInstance: {fileID: 3587930409993860428}
+  m_PrefabAsset: {fileID: 0}
