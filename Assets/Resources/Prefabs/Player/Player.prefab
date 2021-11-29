@@ -116,7 +116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803244800918249040}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.083999634, y: 0.047999382, z: 0}
+  m_LocalPosition: {x: 0, y: -0.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5584823836983835775}
@@ -1071,9 +1071,10 @@ MonoBehaviour:
   walkSpeed: 8
   runSpeed: 20
   jumpHeight: 4
+  doubleJumpHeight: 0
+  turnSmoothTime: 0.1
   gravity: -9.81
   gravityFactor: 4
-  turnSmoothTime: 0.1
   groundCheck: {fileID: 803244800918249041}
   groundDistance: 0.4
   groundMask:
@@ -1175,7 +1176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffd69b358491b314e9e41ef2dba2eb00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: []
+  grassHopper: {fileID: 0}
 --- !u!1 &5344715146206453152
 GameObject:
   m_ObjectHideFlags: 0

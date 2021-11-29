@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    [Header("QuestGivers")]
     public GameObject grassHopper;
 
     public void AddItem(GameObject item)

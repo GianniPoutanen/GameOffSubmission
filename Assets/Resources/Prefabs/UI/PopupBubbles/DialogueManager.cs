@@ -322,6 +322,7 @@ public class DialogueManager : MonoBehaviour
     public void HelpGrasshopper(string[] info)
     {
         UnlocksManager.Instance.UnlockSkill(0);
+        GameAssets.Instance.playerCharacter.GetComponent<PlayerMovementBehaviour>().maxJumps++;
     }
 
     #endregion OneOffs - probs bad practice but quick

@@ -63,11 +63,6 @@ public class PlayerMovementBehaviour : MonoBehaviour
             stamanaContainer.ResizeStamanaBars();
         }
 
-        if (maxJumps == 1 && UnlocksManager.Instance.CheckUnlocked(0))
-        {
-            maxJumps = 2;
-        }
-        
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         animator.SetBool("IsGrounded", isGrounded);
@@ -151,7 +146,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
         animator.SetFloat("velocityY", velocity.y);
 
         //Sort Animation
-        if (isGrounded && direction.magnitude > 0.1f)
+        if (isGrounded && direction.magnitude > 0.1f && !GameAssets.Instance.dialogueManager.InDialog)
         {
             animator.SetFloat("Speed", isRunning ? 2f : 1f);
         }
