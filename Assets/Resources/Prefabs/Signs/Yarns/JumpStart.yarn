@@ -1,0 +1,16 @@
+title: Sign.Jump
+tags: 
+colorID: 0
+position: 740,311
+---
+<<SetSpeaker Current>>
+You know how to play already.
+===
+title: Sign.Town
+tags: 
+colorID: 0
+position: 1072,225
+---
+<<SetSpeaker Current>>
+Welcome to Wimbolden
+===

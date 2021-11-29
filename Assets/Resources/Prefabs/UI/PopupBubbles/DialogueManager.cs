@@ -248,6 +248,13 @@ public class DialogueManager : MonoBehaviour
             return GameAssets.Instance.playerCharacter;
         }
 
+        if (name == "Current")
+        {
+            return closestSpeaker.gameObject;
+        }
+
+
+
         foreach (DialogueSpeaker speaker in allSpeakers)
         {
             if (speaker.name == name)
