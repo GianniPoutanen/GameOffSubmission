@@ -308,6 +308,7 @@ public class DialogueManager : MonoBehaviour
 
         dialogueRunner.AddCommandHandler("SetSpeaker", SetSpeakerInfo);
         dialogueRunner.AddCommandHandler("MothFlyAway", MothFriendFlyAway);
+        dialogueRunner.AddCommandHandler("HelpGrasshopper", HelpGrasshopper);
     }
 
     public void MothFriendFlyAway(string[] info)
@@ -316,6 +317,11 @@ public class DialogueManager : MonoBehaviour
         {
             currentSpeaker.GetComponent<MothFriendStart>().FlyAway();
         }
+    }
+
+    public void HelpGrasshopper(string[] info)
+    {
+        UnlocksManager.Instance.UnlockSkill(0);
     }
 
     #endregion OneOffs - probs bad practice but quick

@@ -1,0 +1,41 @@
+title: Grasshopper.GameStart
+tags: 
+colorID: 0
+position: 668,281
+---
+<<SetSpeaker Grasshopper>>
+I'm a grasshopper that can't hop
+<<SetSpeaker Lamp>>
+Huh?
+<<SetSpeaker Grasshopper>>
+I'm a grasswalker
+<<SetSpeaker Lamp>>
+Why do you need to jump?
+<<SetSpeaker Grasshopper>>
+I want that super rare flower over there
+But I don't want to fall into the water
+Famously, bugs can't swim
+You're a moth though, so you should have no trouble
+Get it for me, would ya?
+===
+title: Grasshopper.QuestComplete
+tags: 
+colorID: 0
+position: 668,281
+---
+<<SetSpeaker Grasshopper>>
+Wow! Very cool
+Why didn't you just fly though?
+<<SetSpeaker Lamp>>
+Short wings...
+<<SetSpeaker Grasshopper>>
+I get that, my legs are too short and straight
+You're gonna need to learn to double jump
+My brother's great at it
+Basically, jump once, then while still in the air...
+you jump again
+Can't do another one though
+<<SetSpeaker Lamp>>
+Cool, thanks!
+<<HelpGrasshopper>>
+===

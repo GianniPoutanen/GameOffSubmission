@@ -6,7 +6,7 @@ public class UnlocksManager : MonoBehaviour
 {
     public enum eSkillType
     {
-        
+        DoubleJump
     }
 
     [SerializeField]
