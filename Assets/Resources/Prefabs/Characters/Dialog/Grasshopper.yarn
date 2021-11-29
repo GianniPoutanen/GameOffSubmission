@@ -13,6 +13,7 @@ I'm a grasswalker
 Why do you need to jump?
 <<SetSpeaker Grasshopper>>
 I want that super rare flower over there
+My brother wants them, and I want to impress him
 But I don't want to fall into the water
 Famously, bugs can't swim
 You're a moth though, so you should have no trouble
@@ -30,12 +31,9 @@ Why didn't you just fly though?
 Short wings...
 <<SetSpeaker Grasshopper>>
 I get that, my legs are too short and straight
-You're gonna need to learn to double jump
-My brother's great at it
-Basically, jump once, then while still in the air...
-you jump again
-Can't do another one though
+You know what, I'll let you get the credit
+Go talk to my brother, he's just on that hill over there
 <<SetSpeaker Lamp>>
-Cool, thanks!
+Will do!
 <<HelpGrasshopper>>
 ===
