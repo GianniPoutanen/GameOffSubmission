@@ -16,7 +16,9 @@ public class DialogueSpeaker : MonoBehaviour
 
     [Header("Dialogue Colours")]
     public Color bubbleColour = Color.white;
-    public Color textColour = new Color(255f/82f, 255f / 82f, 255f / 82f,1);
+    public Color textColour = new Color(255f / 82f, 255f / 82f, 255f / 82f, 1);
+
+    public AudioClip[] voiceClips;
 
 
     private void Start()
@@ -46,6 +48,14 @@ public class DialogueSpeaker : MonoBehaviour
         else if (GameAssets.Instance.dialogueManager.closestSpeaker == this)
         {
             GameAssets.Instance.dialogueManager.UpdateClosestDialogueAgent(null);
+        }
+    }
+
+    public void PlayVoiceClip()
+    {
+        if (voiceClips.Length > 0)
+        {
+            SoundManager.PlaySound(voiceClips[Random.Range(0, voiceClips.Length)]);
         }
     }
 }

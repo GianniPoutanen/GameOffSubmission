@@ -10,7 +10,7 @@ public class MothFriendStart : MonoBehaviour
     public Transform followObject;
     public bool follow;
     public float speedDampiner;
-
+    
     private void Update()
     {
         if (follow)

@@ -109,6 +109,10 @@ public class DialogueManager : MonoBehaviour
                 {
                     dialogueRunner.yarnScripts = new YarnProgram[] { closestSpeaker.yarnScript };
                     dialogueRunner.StartDialogue(closestSpeaker.StartNode);
+                    if (currentSpeaker.GetComponent<DialogueSpeaker>() != null) 
+                    {
+                        currentSpeaker.GetComponent<DialogueSpeaker>().PlayVoiceClip();
+                    }
                 }
             }
         }
@@ -122,6 +126,7 @@ public class DialogueManager : MonoBehaviour
                 {
                     Debug.Log("Continued Dialog");
                     dialogueRunner.Dialogue.Continue();
+                    currentSpeaker.GetComponent<DialogueSpeaker>().PlayVoiceClip();
                     SetBubblePosition();
                 }
                 else

@@ -1086,6 +1086,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 08b2fc75c6a0a904b90168775b16bd4e, type: 3}
   - {fileID: 8300000, guid: e02a6c7ab8c4c0844bf9065dd7713ca3, type: 3}
   - {fileID: 8300000, guid: 8ca904f362f223c41949d35c31e2b5d6, type: 3}
+  stamanaContainer: {fileID: 0}
+  stamanaDrainSpeed: 1
+  stamanaRechargeTime: 0
 --- !u!114 &970012524005065518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1107,6 +1110,7 @@ MonoBehaviour:
   climbableMask:
     serializedVersion: 2
     m_Bits: 576
+  animator: {fileID: 0}
 --- !u!143 &7919688205960176971
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1118,7 +1122,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2.38
+  m_Height: 2.3
   m_Radius: 0.6
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -1136,7 +1140,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.6
-  m_Height: 2.38
+  m_Height: 2.3
   m_Direction: 1
   m_Center: {x: 0, y: 1.2, z: 0}
 --- !u!1 &5344715146206453152

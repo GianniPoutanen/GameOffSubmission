@@ -7,19 +7,25 @@ public class PlayerMovementBehaviour : MonoBehaviour
 
     public CharacterController controller;
 
+    [Header("Movement")]
     public float walkSpeed = 6f;
     public float runSpeed = 6f;
     public float jumpHeight;
+    public float doubleJumpHeight;
+    public float turnSmoothTime = 0.1f;
+    [Header("Gravity Scaling")]
     public float gravity = -9.81f;
     [Range(1f, 10f)]
     public float gravityFactor;
 
-    public float turnSmoothTime = 0.1f;
     float turnSmoothVelocity;
 
+    [Header("Ground Checking")]
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+
+    [Header("Jumping")]
     public int maxJumps = 1;
     public float jumpTimeBuffer;
     float timeSpentJumping;
@@ -34,14 +40,29 @@ public class PlayerMovementBehaviour : MonoBehaviour
 
     [Header("Step Sounds")]
     public AudioClip[] stepSounds;
+
+    [Header("Stamana Variables")]
+    public StamanaContainer stamanaContainer;
+    public float stamanaDrainSpeed = 1;
+    public float stamanaRechargeTime;
+    private float stamanaChargeTimer;
+    private float stamanaRechargeSpeed = 1;
+
     private void Start()
     {
         GameAssets.Instance.playerCharacter = this.gameObject;
     }
 
 
+
     private void Update()
     {
+        if (maxJumps != stamanaContainer.numStamanaBars)
+        {
+            stamanaContainer.numStamanaBars = maxJumps;
+            stamanaContainer.ResizeStamanaBars();
+        }
+
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         animator.SetBool("IsGrounded", isGrounded);
@@ -59,7 +80,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
             isInAir = false;
             if (velocity.y < 0)
             {
-                velocity.y = -0.5f;
+                velocity.y = -2f;
             }
         }
 
@@ -72,29 +93,50 @@ public class PlayerMovementBehaviour : MonoBehaviour
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift) && stamanaContainer.HasStamana())
             {
                 isRunning = true;
                 controller.Move(moveDir.normalized * runSpeed * Time.deltaTime);
+                if (isGrounded)
+                    stamanaContainer.UpdateStamana(-stamanaDrainSpeed);
+                stamanaChargeTimer = stamanaRechargeTime;
 
             }
             else
             {
-                isRunning = false;
-                controller.Move(moveDir.normalized * walkSpeed * Time.deltaTime);
+                if (isGrounded)
+                {
+                    isRunning = false;
+                    controller.Move(moveDir.normalized * walkSpeed * Time.deltaTime);
+                }
+                else if (isRunning)
+                {
+                    controller.Move(moveDir.normalized * runSpeed * Time.deltaTime);
+                }
+                else
+                {
+                    controller.Move(moveDir.normalized * walkSpeed * Time.deltaTime);
+                }
             }
         }
 
         if ((Input.GetButtonDown("Jump") || gameObject.GetComponent<Climb>().isClimbing) && !GameAssets.Instance.dialogueManager.InDialog)
         {
-            if (++currentJumps <= maxJumps)
+            if (stamanaContainer.HasStamana())//++currentJumps <= maxJumps)
             {
                 if (isInAir)
                     animator.Play("DoubleJump");
 
                 gameObject.GetComponent<Climb>().isClimbing = false;
-                velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity * gravityFactor);
+                // Calc Jump height
+                if (isInAir)
+                    velocity.y = Mathf.Sqrt(doubleJumpHeight * -2 * gravity * gravityFactor);
+                else
+                    velocity.y = Mathf.Sqrt(jumpHeight * -2 * gravity * gravityFactor);
+
                 isInAir = true;
+                stamanaContainer.UseUpStamana();
+                stamanaChargeTimer = stamanaRechargeTime;
             }
         }
 
@@ -108,8 +150,18 @@ public class PlayerMovementBehaviour : MonoBehaviour
         {
             animator.SetFloat("Speed", isRunning ? 2f : 1f);
         }
-        else{
+        else
+        {
             animator.SetFloat("Speed", 0f);
+        }
+
+        if (stamanaChargeTimer > 0)
+        {
+            stamanaChargeTimer -= Time.deltaTime;
+        }
+        else
+        {
+            stamanaContainer.UpdateStamana(stamanaRechargeSpeed);
         }
     }
 
