@@ -53,8 +53,6 @@ public class PlayerMovementBehaviour : MonoBehaviour
         GameAssets.Instance.playerCharacter = this.gameObject;
     }
 
-
-
     private void Update()
     {
         if (maxJumps != stamanaContainer.numStamanaBars)

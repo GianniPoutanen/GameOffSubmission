@@ -10,8 +10,11 @@ ScriptedImporter:
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
   baseLanguageID: 
   stringIDs:
-  - JumpStart-Sign.Jump-0
-  - JumpStart-Sign.Town-1
+  - JumpStart-Jump-0
+  - JumpStart-Town-1
+  - JumpStart-NoJump-2
+  - JumpStart-WIP-3
+  - JumpStart-WIP-4
   compilationStatus: 1
   isSuccesfullyCompiled: 1
   compilationErrorMessage: 
