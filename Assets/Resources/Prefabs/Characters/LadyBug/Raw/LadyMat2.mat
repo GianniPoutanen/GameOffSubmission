@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: New Material
+  m_Name: LadyMat2
   m_Shader: {fileID: -6465566751694194690, guid: 9899b1b353710854f92aa0eff08be8c8, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -33,7 +33,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_1fb578568c9042238870536e3f27d0ed:
-        m_Texture: {fileID: 2800000, guid: f973c60dad5b2f749b05bcc55e32cdb2, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1a02884cfa82f934bbf4aadaed2bb64b, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:

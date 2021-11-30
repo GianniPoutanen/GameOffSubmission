@@ -1,8 +1,41 @@
-title: Sign.Jump
+title: Jump
 tags: 
-colorID: 0
-position: 740,311
+colorID: 8
+position: 739,311
 ---
 <<SetSpeaker Current>>
 You know how to play already.
+===
+title: Town
+tags: 
+colorID: 0
+position: 737,93
+---
+<<SetSpeaker Current>>
+Welcome to Wimbolden
+===
+title: NoJump
+tags: 
+colorID: 0
+position: 978,90
+---
+<<SetSpeaker Current>>
+No diving!
+===
+title: WIP
+tags: 
+colorID: 0
+position: 989,319
+---
+<<SetSpeaker Current>>
+Work in progress.
+Hope you enjoyed the game!
+===
+title: Training
+tags: 
+colorID: 0
+position: 730,530
+---
+<<SetSpeaker Current>>
+Training Ground for EPIC BUGS!!!
 ===
