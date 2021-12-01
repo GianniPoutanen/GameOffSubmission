@@ -28,6 +28,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
     [Header("Jumping")]
     public int maxJumps = 1;
     public float jumpTimeBuffer;
+    public float slideFriction = 0.3f;
     float timeSpentJumping;
 
     public Animator animator;
@@ -47,10 +48,16 @@ public class PlayerMovementBehaviour : MonoBehaviour
     public float stamanaRechargeTime;
     private float stamanaChargeTimer;
     private float stamanaRechargeSpeed = 1;
+    private Vector3 hitNormal;
+    private bool isSliding;
 
     private void Start()
     {
         GameAssets.Instance.playerCharacter = this.gameObject;
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit) {
+        hitNormal = hit.normal;
     }
 
     private void Update()
@@ -75,7 +82,13 @@ public class PlayerMovementBehaviour : MonoBehaviour
         {
             timeSpentJumping += Time.deltaTime;
         }
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask) && (!isInAir || timeSpentJumping > jumpTimeBuffer);
+
+        handleSlope();
+
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask) &&
+            (!isInAir || timeSpentJumping > jumpTimeBuffer) &&
+            !isSliding;
+
         if (isGrounded)
         {
             timeSpentJumping = 0;
@@ -168,6 +181,27 @@ public class PlayerMovementBehaviour : MonoBehaviour
         }
     }
 
+    private void handleSlope()
+    {
+
+        if (isSliding)
+        {
+            if (Vector3.Angle (Vector3.up, hitNormal) > controller.slopeLimit)
+            {
+                velocity.y += gravity;
+                velocity.x += (1f - hitNormal.y) * hitNormal.x * (-gravity - slideFriction);
+                velocity.z += (1f - hitNormal.y) * hitNormal.z * (-gravity - slideFriction);
+            }
+            else
+            {
+                velocity.y = -2f;
+                velocity.x = 0f;
+                velocity.z = 0f;
+            }
+        }
+
+        isSliding = (Vector3.Angle (Vector3.up, hitNormal) > controller.slopeLimit);
+    }
 
     private int stepSoundCounter = 0;
     public void PlayStepSound()
