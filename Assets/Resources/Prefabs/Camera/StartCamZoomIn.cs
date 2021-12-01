@@ -14,6 +14,7 @@ public class StartCamZoomIn : MonoBehaviour
 
     public bool soundLock = false;
     public bool dialogueLock = false;
+    public GameObject spaceToCont;
 
     public AudioClip[] stepSounds;
 
@@ -39,6 +40,7 @@ public class StartCamZoomIn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        spaceToCont.SetActive(!dialogueLock);
         if (opening)
         {
             if (openShadeInImage.color.a != 1)
@@ -54,7 +56,7 @@ public class StartCamZoomIn : MonoBehaviour
             }
         }
 
-        if (!dialogueLock && Input.GetKeyDown(KeyCode.Space))
+        if (!dialogueLock && Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.E) )
         {
             this.GetComponent<DialogueRunner>().Dialogue.Continue();
         }
