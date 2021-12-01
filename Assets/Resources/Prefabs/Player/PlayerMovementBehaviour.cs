@@ -50,10 +50,12 @@ public class PlayerMovementBehaviour : MonoBehaviour
     private float stamanaRechargeSpeed = 1;
     private Vector3 hitNormal;
     private bool isSliding;
+    private Climb climbScript;
 
     private void Start()
     {
         GameAssets.Instance.playerCharacter = this.gameObject;
+        climbScript = gameObject.GetComponent<Climb>();
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit) {
@@ -62,6 +64,10 @@ public class PlayerMovementBehaviour : MonoBehaviour
 
     private void Update()
     {
+        if (UnlocksManager.Instance.unlockedSkills.Contains(UnlocksManager.eSkillType.Climb) && !climbScript.enabled)
+        {
+            climbScript.enabled = true;
+        }
         int actualMaxJumps = maxJumps;
         if (UnlocksManager.Instance.unlockedSkills.Contains(UnlocksManager.eSkillType.DoubleJump))
         {
@@ -136,14 +142,14 @@ public class PlayerMovementBehaviour : MonoBehaviour
             }
         }
 
-        if ((Input.GetButtonDown("Jump") || gameObject.GetComponent<Climb>().isClimbing) && !GameAssets.Instance.dialogueManager.InDialog)
+        if ((Input.GetButtonDown("Jump") || climbScript.isClimbing) && !GameAssets.Instance.dialogueManager.InDialog)
         {
             if (stamanaContainer.HasStamana())//++currentJumps <= maxJumps)
             {
                 if (isInAir)
                     animator.Play("DoubleJump");
 
-                gameObject.GetComponent<Climb>().isClimbing = false;
+                climbScript.isClimbing = false;
                 // Calc Jump height
                 if (isInAir)
                     velocity.y = Mathf.Sqrt(doubleJumpHeight * -2 * gravity * gravityFactor);
@@ -183,8 +189,7 @@ public class PlayerMovementBehaviour : MonoBehaviour
 
     private void handleSlope()
     {
-
-        if (isSliding)
+        if (isSliding && !climbScript.enabled)
         {
             if (Vector3.Angle (Vector3.up, hitNormal) > controller.slopeLimit)
             {
@@ -199,7 +204,6 @@ public class PlayerMovementBehaviour : MonoBehaviour
                 velocity.z = 0f;
             }
         }
-
         isSliding = (Vector3.Angle (Vector3.up, hitNormal) > controller.slopeLimit);
     }
 

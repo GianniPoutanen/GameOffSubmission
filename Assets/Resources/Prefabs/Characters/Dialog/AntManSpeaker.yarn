@@ -1,0 +1,35 @@
+title: AntManSpeaker.Start
+tags: 
+colorID: 0
+position: 585,106
+---
+<<SetSpeaker Lamp>>
+Hey, can anyone help me get up the tree?
+<<SetSpeaker AntManSpeaker>>
+We do know a thing or two about climbing
+But what's in it for us...
+<<SetSpeaker Lamp>>
+My eternal gratitude
+<<SetSpeaker AntManSpeaker>>
+Hmm... not bad
+We could ask you to fetch some super rare items...
+But we can see you're in a rush
+Ready to learn how to climb?
+<<SetSpeaker Lamp>>
+Yes!
+<<SetSpeaker AntManSpeaker>>
+Here you go!
+*imparts knowledge*
+Now try jumping on a wall
+<<SetSpeaker Lamp>>
+Thanks!
+<<AntChat>>
+===
+title: AntManSpeaker.AlreadySpoken
+tags: 
+colorID: 0
+position: 585,106
+---
+<<SetSpeaker AntManSpeaker>>
+Get outta here! We got work to do!
+===

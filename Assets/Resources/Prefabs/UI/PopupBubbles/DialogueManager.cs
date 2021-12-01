@@ -126,7 +126,10 @@ public class DialogueManager : MonoBehaviour
                 {
                     Debug.Log("Continued Dialog");
                     dialogueRunner.Dialogue.Continue();
-                    currentSpeaker.GetComponent<DialogueSpeaker>().PlayVoiceClip();
+                    if (currentSpeaker.GetComponent<DialogueSpeaker>())
+                    {
+                        currentSpeaker.GetComponent<DialogueSpeaker>().PlayVoiceClip();
+                    }
                     SetBubblePosition();
                 }
                 else
@@ -317,6 +320,7 @@ public class DialogueManager : MonoBehaviour
         dialogueRunner.AddCommandHandler("MothFlyAway", MothFriendFlyAway);
         dialogueRunner.AddCommandHandler("HelpGrasshopper", HelpGrasshopper);
         dialogueRunner.AddCommandHandler("HelpGrasshopperBrother", HelpGrasshopperBrother);
+        dialogueRunner.AddCommandHandler("AntChat", AntChat);
     }
 
     public void MothFriendFlyAway(string[] info)
@@ -341,7 +345,20 @@ public class DialogueManager : MonoBehaviour
 
     public void HelpGrasshopperBrother(string[] info)
     {
-        UnlocksManager.Instance.UnlockSkill(0);
+        UnlocksManager.Instance.UnlockSkill(UnlocksManager.eSkillType.DoubleJump);
+    }
+
+    public void AntChat(string[] info)
+    {
+        UnlocksManager.Instance.UnlockSkill(UnlocksManager.eSkillType.Climb);
+        // TODO: Yucko
+        for (int i = 0; i < allSpeakers.Count; i++)
+        {
+            if (allSpeakers[i].name == "AntManSpeaker")
+            {
+                allSpeakers[i].StartNode = "AntManSpeaker.AlreadySpoken";
+            }
+        }
     }
 
     #endregion OneOffs - probs bad practice but quick

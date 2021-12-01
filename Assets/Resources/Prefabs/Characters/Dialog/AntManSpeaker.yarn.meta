@@ -1,0 +1,31 @@
+fileFormatVersion: 2
+guid: cb7568fdac86e084c84f99b4ce0fb9a0
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - AntManSpeaker-AntManSpeaker.Start-0
+  - AntManSpeaker-AntManSpeaker.Start-1
+  - AntManSpeaker-AntManSpeaker.Start-2
+  - AntManSpeaker-AntManSpeaker.Start-3
+  - AntManSpeaker-AntManSpeaker.Start-4
+  - AntManSpeaker-AntManSpeaker.Start-5
+  - AntManSpeaker-AntManSpeaker.Start-6
+  - AntManSpeaker-AntManSpeaker.Start-7
+  - AntManSpeaker-AntManSpeaker.Start-8
+  - AntManSpeaker-AntManSpeaker.Start-9
+  - AntManSpeaker-AntManSpeaker.Start-10
+  - AntManSpeaker-AntManSpeaker.Start-11
+  - AntManSpeaker-AntManSpeaker.Start-12
+  - AntManSpeaker-AntManSpeaker.AlreadySpoken-13
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

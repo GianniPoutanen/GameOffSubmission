@@ -3,7 +3,6 @@ using UnityEngine;
 public class Climb : MonoBehaviour
 {
     public CharacterController controller;
-    public Animation anim;
     public bool isClimbing;
     public float climbSpeed = 3;
     public float rotationSpeed = 5;

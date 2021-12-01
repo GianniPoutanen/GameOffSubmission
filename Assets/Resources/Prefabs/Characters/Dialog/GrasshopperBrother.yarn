@@ -55,7 +55,7 @@ But I can't even get to the tree
 <<SetSpeaker GrasshopperBrotherSpeaker>>
 Hmm...
 I'd lend you a hand...
-But What's in it for me?
+But what's in it for me?
 <<SetSpeaker Lamp>>
 Your brother said you like special nectar?..
 <<SetSpeaker GrasshopperBrotherSpeaker>>
@@ -100,8 +100,9 @@ Trust me and trust yourself
 you might not gain much height
 but you'll cover some distance
 <<SetSpeaker Lamp>>
-Okay, i'll try
-<<HelpGrasshopperBrother>>
+Okay, I'll try
+<<SetSpeaker GrasshopperBrotherSpeaker>>
 That's the spirit
 meet you at the top
+<<HelpGrasshopperBrother>>
 ===
