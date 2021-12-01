@@ -7,6 +7,14 @@ position: 668,281
 So close!
 That one was it I'm sure!
 <<SetSpeaker Lamp>>
+I'll... leave you alone
+===
+title: GrasshopperBrother.FoundOrb
+tags: 
+colorID: 0
+position: 668,281
+---
+<<SetSpeaker Lamp>>
 What are you doing?
 <<SetSpeaker GrasshopperBrotherSpeaker>>
 What does it look like?
@@ -17,5 +25,49 @@ Can't jump as high as you though
 <<SetSpeaker GrasshopperBrotherSpeaker>>
 Hmm...
 If you could jump more than once, I'm sure that'd help
-Say, find me 4 special flowers and I'll teach you
+Say, find me 4 of those orbs of nectar you're holding
+and I'll teach you
+===
+title: GrasshopperBrother.HelpedGrasshopper
+tags: 
+colorID: 0
+position: 668,281
+---
+<<SetSpeaker Lamp>>
+What are you doing?
+<<SetSpeaker GrasshopperBrotherSpeaker>>
+What does it look like?
+I'm trying to jump as high as that tree
+<<SetSpeaker Lamp>>
+I'm trying to get to the top of it
+Can you teach me how to jump as high as you?
+<<SetSpeaker GrasshopperBrotherSpeaker>>
+Hmm...
+What's in it for me?
+<<SetSpeaker Lamp>>
+Your brother said you like special nectar...
+<<SetSpeaker GrasshopperBrotherSpeaker>>
+He's not wrong...
+Find me 4, and I'll teach you the way
+===
+title: GrasshopperBrother.FoundAllOrbs
+tags: 
+colorID: 0
+position: 668,281
+---
+<<SetSpeaker GrasshopperBrotherSpeaker>>
+You have special orbs, gimme!
+<<SetSpeaker Lamp>>
+Okay, here you go
+<<SetSpeaker GrasshopperBrotherSpeaker>>
+Thanks!
+Now I will impart on you my grasshopper wisdom
+Listen closely
+After you jump, but before you hit the ground
+Try jumping again
+You're welcome
+It only works once
+<<SetSpeaker Lamp>>
+Incredible, thank you
+<<HelpGrasshopperBrother>>
 ===

@@ -55,9 +55,14 @@ public class PlayerMovementBehaviour : MonoBehaviour
 
     private void Update()
     {
-        if (maxJumps != stamanaContainer.numStamanaBars)
+        int actualMaxJumps = maxJumps;
+        if (UnlocksManager.Instance.unlockedSkills.Contains(UnlocksManager.eSkillType.DoubleJump))
         {
-            stamanaContainer.numStamanaBars = maxJumps;
+            actualMaxJumps = maxJumps + 1;
+        }
+        if (actualMaxJumps != stamanaContainer.numStamanaBars)
+        {
+            stamanaContainer.numStamanaBars = actualMaxJumps;
             stamanaContainer.ResizeStamanaBars();
         }
 

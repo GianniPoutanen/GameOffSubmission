@@ -316,6 +316,7 @@ public class DialogueManager : MonoBehaviour
         dialogueRunner.AddCommandHandler("SetSpeaker", SetSpeakerInfo);
         dialogueRunner.AddCommandHandler("MothFlyAway", MothFriendFlyAway);
         dialogueRunner.AddCommandHandler("HelpGrasshopper", HelpGrasshopper);
+        dialogueRunner.AddCommandHandler("HelpGrasshopperBrother", HelpGrasshopperBrother);
     }
 
     public void MothFriendFlyAway(string[] info)
@@ -328,8 +329,19 @@ public class DialogueManager : MonoBehaviour
 
     public void HelpGrasshopper(string[] info)
     {
+        for (int i = 0; i < allSpeakers.Count; i++)
+        {
+            // TODO: Not this smelly code
+            if (allSpeakers[i].name == "GrasshopperBrotherSpeaker")
+            {
+                allSpeakers[i].StartNode = "GrasshopperBrother.HelpedGrasshopper";
+            }
+        }
+    }
+
+    public void HelpGrasshopperBrother(string[] info)
+    {
         UnlocksManager.Instance.UnlockSkill(0);
-        GameAssets.Instance.playerCharacter.GetComponent<PlayerMovementBehaviour>().maxJumps++;
     }
 
     #endregion OneOffs - probs bad practice but quick
