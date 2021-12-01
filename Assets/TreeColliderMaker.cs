@@ -10,20 +10,10 @@ public class TreeColliderMaker : MonoBehaviour
 
     private void Awake()
     {
-        MakeTreeColliders(this.GetComponent<Terrain>(), centerPos, height, width);
+        Terrain thisTerrain = this.GetComponent<Terrain>();
+        MakeTreeColliders(thisTerrain, centerPos, height, width);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            foreach (TreePrototype tree in this.GetComponent<Terrain>().terrainData.treePrototypes)
-            {
-                Debug.Log(tree.prefab.layer);//.GetTreeInstance(0).
-            }
-        }
-    }
-    
 
     public static void MakeTreeColliders(Terrain terrain)
     {
