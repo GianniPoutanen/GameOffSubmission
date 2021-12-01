@@ -8,12 +8,13 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
-  baseLanguageID: 
-  stringIDs:
-  - GameStart-GameStartNode-0
-  - GameStart-GameStartNode-1
+  baseLanguageID: en-AU
+  stringIDs: []
   compilationStatus: 1
-  isSuccesfullyCompiled: 1
-  compilationErrorMessage: 
+  isSuccesfullyCompiled: 0
+  compilationErrorMessage: 'Error on line 1 at position 1:token recognition error
+    at: ''[''
+
+'
   baseLanguage: {instanceID: 0}
   localizations: []

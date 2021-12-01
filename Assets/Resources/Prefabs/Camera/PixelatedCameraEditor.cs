@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-
+#if (UNITY_EDITOR) 
 [CustomEditor(typeof(PixelatedCamera))]
 public class PixelatedCameraEditor : Editor
 {
@@ -14,3 +14,4 @@ public class PixelatedCameraEditor : Editor
         if (DrawDefaultInspector() || pc.CheckScreenResize()) pc.Init();
     }
 }
+#endif

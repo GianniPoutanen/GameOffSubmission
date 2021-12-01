@@ -8,11 +8,45 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
-  baseLanguageID: 
+  baseLanguageID: en-AU
   stringIDs:
-  - Grasshopper-Grasshopper.Start-0
+  - Grasshopper-Grasshopper.GameStart-0
+  - Grasshopper-Grasshopper.GameStart-1
+  - Grasshopper-Grasshopper.GameStart-2
+  - Grasshopper-Grasshopper.GameStart-3
+  - Grasshopper-Grasshopper.GameStart-4
+  - Grasshopper-Grasshopper.GameStart-5
+  - Grasshopper-Grasshopper.GameStart-6
+  - Grasshopper-Grasshopper.GameStart-7
+  - Grasshopper-Grasshopper.GameStart-8
+  - Grasshopper-Grasshopper.GameStart-9
+  - Grasshopper-Grasshopper.GameStart-10
+  - Grasshopper-Grasshopper.QuestComplete-11
+  - Grasshopper-Grasshopper.QuestComplete-12
+  - Grasshopper-Grasshopper.QuestComplete-13
+  - Grasshopper-Grasshopper.QuestComplete-14
+  - Grasshopper-Grasshopper.QuestComplete-15
+  - Grasshopper-Grasshopper.QuestComplete-16
+  - Grasshopper-Grasshopper.QuestComplete-17
+  - Grasshopper-Grasshopper.QuestComplete-18
+  - Grasshopper-Grasshopper.QuestComplete-19
+  - Grasshopper-Grasshopper.QuestComplete-20
+  - Grasshopper-Grasshopper.QuestComplete-21
+  - Grasshopper-Grasshopper.QuestComplete-22
+  - Grasshopper-Grasshopper.QuestComplete-23
+  - Grasshopper-Grasshopper.QuestComplete-24
+  - Grasshopper-Grasshopper.QuestComplete-25
+  - Grasshopper-Grasshopper.QuestComplete-26
+  - Grasshopper-Grasshopper.QuestComplete-27
+  - Grasshopper-Grasshopper.QuestComplete-28
+  - Grasshopper-Grasshopper.QuestComplete-29
+  - Grasshopper-Grasshopper.QuestComplete-30
+  - Grasshopper-Grasshopper.QuestComplete-31
   compilationStatus: 1
   isSuccesfullyCompiled: 1
-  compilationErrorMessage: 
-  baseLanguage: {instanceID: 0}
+  compilationErrorMessage: 'Error on line 1 at position 1:token recognition error
+    at: ''[''
+
+'
+  baseLanguage: {fileID: 7128917941130120860, guid: 82431537f85c6774ea528b5c4dd99b31, type: 3}
   localizations: []

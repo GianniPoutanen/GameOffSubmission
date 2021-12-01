@@ -1,7 +1,7 @@
 title: GrasshopperBrother.GameStart
 tags: 
 colorID: 0
-position: 668,281
+position: 548,298
 ---
 <<SetSpeaker GrasshopperBrotherSpeaker>>
 So close!
@@ -12,7 +12,7 @@ I'll... leave you alone
 title: GrasshopperBrother.FoundOrb
 tags: 
 colorID: 0
-position: 668,281
+position: 308,298
 ---
 <<SetSpeaker Lamp>>
 What are you doing?
@@ -20,18 +20,25 @@ What are you doing?
 What does it look like?
 I'm trying to jump as high as that tree
 <<SetSpeaker Lamp>>
-I'm trying to get to the top of it
-Can't jump as high as you though
+Why?
+<<SetSpeaker GrasshopperBrotherSpeaker>>
+You wouldn't get it
+<<SetSpeaker Lamp>>
+I'm trying to get up there too actually
+But I can't even get too the tree
 <<SetSpeaker GrasshopperBrotherSpeaker>>
 Hmm...
-If you could jump more than once, I'm sure that'd help
-Say, find me 4 of those orbs of nectar you're holding
-and I'll teach you
+I'd lend you a hand... 
+if you're willing to get me some nectar
+there should be some in the area 
+find me 4 and I'll help you
+<<SetSpeaker Lamp>>
+Sure!
 ===
 title: GrasshopperBrother.HelpedGrasshopper
 tags: 
 colorID: 0
-position: 668,281
+position: 568,23
 ---
 <<SetSpeaker Lamp>>
 What are you doing?
@@ -39,35 +46,62 @@ What are you doing?
 What does it look like?
 I'm trying to jump as high as that tree
 <<SetSpeaker Lamp>>
-I'm trying to get to the top of it
-Can you teach me how to jump as high as you?
+Why?
+<<SetSpeaker GrasshopperBrotherSpeaker>>
+You wouldn't get it
+<<SetSpeaker Lamp>>
+I'm trying to get up there too, actually
+But I can't even get to the tree
 <<SetSpeaker GrasshopperBrotherSpeaker>>
 Hmm...
-What's in it for me?
+I'd lend you a hand...
+But What's in it for me?
 <<SetSpeaker Lamp>>
-Your brother said you like special nectar...
+Your brother said you like special nectar?..
 <<SetSpeaker GrasshopperBrotherSpeaker>>
-He's not wrong...
-Find me 4, and I'll teach you the way
+Litter bugger isn't wrong...
+Find me 4, and i'll help you
 ===
 title: GrasshopperBrother.FoundAllOrbs
 tags: 
 colorID: 0
-position: 668,281
+position: 301,83
 ---
 <<SetSpeaker GrasshopperBrotherSpeaker>>
-You have special orbs, gimme!
+You have the nectar! 
+gimme gimme!
 <<SetSpeaker Lamp>>
 Okay, here you go
 <<SetSpeaker GrasshopperBrotherSpeaker>>
 Thanks!
-Now I will impart on you my grasshopper wisdom
-Listen closely
-After you jump, but before you hit the ground
-Try jumping again
-You're welcome
-It only works once
+*nom nom nom*
 <<SetSpeaker Lamp>>
-Incredible, thank you
+...
+ummm
+<<SetSpeaker GrasshopperBrotherSpeaker>>
+*nom nom nom*
+<<SetSpeaker Lamp>>
+Could you help me now?
+<<SetSpeaker GrasshopperBrotherSpeaker>>
+Oh yeah, sure
+Now I will impart on you my wisdom
+<<SetSpeaker Lamp>>
+I have to learn!?
+Why can't you take me to the top?
+<<SetSpeaker GrasshopperBrotherSpeaker>>
+How will that help your spiritual journey?
+Look. You can do more than you think.
+Try using those small wings of yours
+Here. Eat some nectar to gain some stamina
+<<SetSpeaker Lamp>>
+mmphmmm
+<<SetSpeaker GrasshopperBrotherSpeaker>>
+Trust me and trust yourself
+you might not gain much height
+but you'll cover some distance
+<<SetSpeaker Lamp>>
+Okay, i'll try
 <<HelpGrasshopperBrother>>
+That's the spirit
+meet you at the top
 ===

@@ -39,3 +39,19 @@ position: 730,530
 <<SetSpeaker Current>>
 Training Ground for EPIC BUGS!!!
 ===
+title: Carrots
+tags: 
+colorID: 0
+position: 981,537
+---
+<<SetSpeaker Current>>
+Not For public consumption!
+===
+title: Tree
+tags: 
+colorID: 0
+position: 477,87
+---
+<<SetSpeaker Current>>
+The Great Tree Pass
+===

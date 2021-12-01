@@ -1,39 +1,60 @@
 title: Grasshopper.GameStart
 tags: 
 colorID: 0
-position: 668,281
+position: 690,73
 ---
 <<SetSpeaker Grasshopper>>
-I'm a grasshopper that can't hop
+Hey you!
+Could you go over there and grab that for me?
 <<SetSpeaker Lamp>>
 Huh?
 <<SetSpeaker Grasshopper>>
-I'm a grasswalker
+I can't get to it myself
 <<SetSpeaker Lamp>>
-Why do you need to jump?
+Why do you need it?
 <<SetSpeaker Grasshopper>>
-I want that super rare orb thing over there
 My brother wants them, and I want to impress him
 But I don't want to fall into the water
 Famously, bugs can't swim
 You're a moth though, so you should have no trouble
 Get it for me, would ya?
+<<SetSpeaker Lamp>>
+Alright, sure
 ===
 title: Grasshopper.QuestComplete
 tags: 
 colorID: 0
-position: 668,281
+position: 427,239
 ---
 <<SetSpeaker Grasshopper>>
-Wow! Very cool
-Why didn't you just fly though?
+Wow, thanks!
+But...
+why didn't you just fly over?
 <<SetSpeaker Lamp>>
+oh, um
 Short wings...
 <<SetSpeaker Grasshopper>>
-I get that, my legs are too short and straight
-You know what, I'll let you get the credit
-Go talk to my brother, he's just on that hill over there
+oh!
+I get that,
+my legs are too short and straight
+Headed for the firelight ceremony? 
 <<SetSpeaker Lamp>>
-Will do!
+Yes actually
+<<SetSpeaker Grasshopper>>
+Cool!
+You know what
+Go talk to my brother, 
+he's just on that hill over there
+He'll give you a hand for some nectar
+<<SetSpeaker Lamp>>
+Nectar?
+<<SetSpeaker Grasshopper>>
+Don't worry
+You'll figure it out
+<<SetSpeaker Lamp>>
+Okay then
+Cya
+<<SetSpeaker Grasshopper>>
+Catchya later!
 <<HelpGrasshopper>>
 ===
